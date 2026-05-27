@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 70%;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+      }
+
+      th {
+        background-color: lightgray;
+      }
+
+      button {
+        padding: 5px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Product Details</h2>
+
+    <button onclick="addProduct()">Add Product</button>
+
+    <table id="productTable">
+      <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Action</th>
+      </tr>
+    </table>
+
+    <script>
+      function addProduct() {
+       
+        let name = prompt("Enter Product Name");
+        let price = prompt("Enter Product Price");
+        let category = prompt("Enter Product Category");
+
+        
+        let table = document.getElementById("productTable");
+
+        // Create tr
+        let tr = document.createElement("tr");
+
+        
+        let td1 = document.createElement("td");
+        let td2 = document.createElement("td");
+        let td3 = document.createElement("td");
+        let td4 = document.createElement("td");
+
+       
+        td1.innerHTML = name;
+        td2.innerHTML = price;
+        td3.innerHTML = category;
+
+        
+        let removeBtn = document.createElement("button");
+        removeBtn.innerHTML = "Remove";
+
+       
+        removeBtn.onclick = function () {
+          tr.remove();
+        };
+
+      
+        td4.appendChild(removeBtn);
+
+      
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+
+        
+        table.appendChild(tr);
+      }
+    </script>
+  </body>
+</html>

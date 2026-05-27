@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 align="center">Regestration from</h1>
+    <form action="get">
+        <table border="1" align="center" cellspacing="10px" cellpadding="10px">
+            <tr>
+                <th>Username:</th>
+                <td><input type="text" name="username" id=""></td>
+                <th>Email:</th>
+                <td><input type="email" name="" id=""></td>
+            </tr>
+            <tr>
+                <th>Password:</th>
+                <td><input type="password" name="" id=""></td>
+                <th>DOB:</th>
+                <td><input type="date" name="" id=""></td>
+            </tr>
+            <tr>
+                <th>Hobby:</th>
+                <td>
+                    <input type="checkbox" name="hobby[]" value="sports" id="">sports
+                    <input type="checkbox" name="hobby[]" value="music" id="">music
+                    <input type="checkbox" name="hobby[]" value="dance" id="">dance
+                </td>
+                <th>Gender:</th>
+                <td>
+                    <input type="radio" name="gender" id="">male
+                    <input type="radio" name="gender" id="">female
+                </td>
+            </tr>
+            <tr>
+                <th>Address:</th>
+                <td><textarea name="" id=""></textarea></td>
+                <th>City</th>
+                <td>
+                    <select name="city" id="">
+                        <option value="">--select</option>
+                        <option value="surat">--surat</option>
+                        <option value="vapi">--vapi</option>
+                        <option value="Daman">--daman</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4"><input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+
+    <fieldset>
+        <legend>Extra input</legend>
+        <label for="">color</label>
+        <input type="color" name="" id="">
+        <br><br>
+        <label for="">number</label>
+        <input type="number" name="" id="">
+        <br><br>
+        <label for="">url</label>
+        <input type="url">
+        <br><br>
+
+    </fieldset>
+</body>
+
+</html>

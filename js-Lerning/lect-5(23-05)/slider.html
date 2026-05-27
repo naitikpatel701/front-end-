@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .main{
+        height: 600px;
+        width: 100%;
+    }
+    img{
+        
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <button id="left">Left</button>
+        <button id="right">right</button>
+      <img src="back1.jpg" alt="" id="img-1">
+      <img src="back2.jpg" alt="" id="img-2">
+      <img src="back3.jpg" alt="" id="img-3">
+    </div>
+
+    <script>
+        let conter=1;
+
+        document.getElementById('right').addEventListener("click",function(){
+        
+         let preimg='img'+conter;
+         document.getElementById(preimg).style.display="none";
+
+        if(conter==3){
+            conter=0;
+        }
+        conter++;
+
+        let curimg='img'+conter;
+        document.getElementById(curimg).style.display="block";
+        })
+       
+    </script>
+</body>
+</html>
