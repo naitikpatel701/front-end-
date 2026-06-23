@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        background-image: url(../lec-8\(04-05\)/images/cars.jpg);
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+        border: 10px solid black;
+        animation: makeCircle;
+        animation-delay: 1s;
+        animation-duration: 2s;
+        animation-timing-function: ease;
+        animation-iteration-count: 3;
+      }
+      @keyframes makeCircle {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" id="box-1"></div>
+  </body>
+</html>

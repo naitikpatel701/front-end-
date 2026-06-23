@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="themeChanger('dark')">Dark</button>
+    <button onclick="themeChanger('light')">Light</button>
+    <div id="main">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique
+        animi sequi voluptatibus aliquam, corrupti et! Eos, consequatur! Hic,
+        natus sint officia iure tempore ea, harum ullam in quos quam at?
+      </p>
+    </div>
+    <script>
+
+        function themeChanger(theme){
+            let divid=document.getElementById('main');
+            if(theme=='dark'){
+                divid.style.backgroundColor="black";
+                divid.style.color="white"
+            }
+            else if(theme=='light'){
+                divid.style.backgroundColor="white";
+                divid.style.color="black";
+            }
+            else{
+                divid.style.backgroundColor="white";
+                divid.style.color="black";
+            }
+        }
+    </script>
+  </body>
+</html>

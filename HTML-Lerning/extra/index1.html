@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #first::first-letter{
+            font-size: 3em;
+            color: blue;
+        }
+        #sec::first-line{
+            font-size: 3em;
+            color: blue;
+        }
+        h1::before{
+            content: '★';
+        }
+        h1::after{
+            content: '★';
+        }
+        #first::selection{
+            background-color: black;
+            color: white;
+        }
+        *::placeholder{
+            color: red;
+        }
+        input:focus{
+            padding: 10px 20px;
+            background-color: gray;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Main handing</h1>
+    <p id="first ">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+      officiis quae odit et veritatis labore. Dolore, necessitatibus rerum.
+      Provident ab assumenda magni eius laborum cupiditate eum saepe omnis
+      consectetur similique.
+    </p>
+    <p id="sec">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus adipisci iure vero? Quod provident, enim, maiores perspiciatis ipsam delectus fuga, alias asperiores laboriosam debitis expedita magni. Aliquid, quasi laborum? Itaque!
+    </p>
+    <input type="text" name="" id="" placeholder="enter text here">
+    <input type="text" name="" id="" placeholder="enter text here">
+    <input type="text" name="" id="" placeholder="enter text here">
+    <textarea name="" id="" placeholder="Enter Address"></textarea>
+  </body>
+</html>
