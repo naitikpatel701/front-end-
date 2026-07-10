@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card shadow">
+        <div class="card-header text-center">
+          <h3>Creator Link Form</h3>
+        </div>
+
+        <div class="card-body">
+          <form id="linkForm">
+            <div class="mb-3" id="titleDiv">
+              <label for="title" class="form-label">Link Title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="title"
+                placeholder="Enter link title"
+              />
+            </div>
+
+            <div class="mb-3" id="urlDiv">
+              <label for="url" class="form-label">Link URL</label>
+              <input
+                type="url"
+                class="form-control"
+                id="url"
+                placeholder="https://example.com"
+              />
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Add Link</button>
+              <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+
+      let uid = urlParams.get("uid");
+      function getLinkById() {
+        let LinkData = localStorage.getItem("f-link");
+        let singleLink = null;
+        if (LinkData) {
+          LinkData = JSON.parse(LinkData);
+          singleLink = LinkData[uid];
+          console.log(singleLink);
+          let title = document.getElementById("title").value=singleLink.title;
+          let url = document.getElementById("url").value=singleLink.url;
+        }
+      }
+      let urlRegex =
+        /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/;
+      let title = document.getElementById("title");
+      let url = document.getElementById("url");
+
+      document
+        .getElementById("linkForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          let title = document.getElementById("title");
+          let url = document.getElementById("url");
+
+          if (title.value == "") {
+            let p1 = document.createElement("p");
+            p1.id = "titleErr";
+            p1.textContent = "Title Required";
+            p1.style.color = "red";
+            document.getElementById("titleDiv").appendChild(p1);
+            title.focus();
+            return false;
+          } else {
+            let p1 = document.getElementById("titleErr");
+            if (p1) {
+              // document.getElementById('titleDiv').removeChild(p1);
+              p1.remove();
+            }
+          }
+          if (url.value == "" || !urlRegex.test(url.value)) {
+            let p1 = document.createElement("p");
+            p1.id = "urlErr";
+            p1.textContent = "url Required";
+            p1.style.color = "red";
+            document.getElementById("urlDiv").appendChild(p1);
+            url.focus();
+            return false;
+          } else {
+            let p1 = document.getElementById("urlErr");
+            if (p1) {
+              // document.getElementById('titleDiv').removeChild(p1);
+              p1.remove();
+            }
+          }
+
+          let link = {
+            title: title.value,
+            url: url.value
+          }
+          if (localStorage.getItem("f-link")) {
+            let oldArray = JSON.parse(localStorage.getItem("f-link"));
+            oldArray.splice(uid,1,link)
+            console.log(oldArray);
+
+            localStorage.setItem('f-link',JSON.stringify(oldArray));
+            window.location="link-data.html"
+
+          }
+        })
+
+        window.onload=getLinkById;
+    </script>
+  </body>
+</html>

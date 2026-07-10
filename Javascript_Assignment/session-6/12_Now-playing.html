@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      Now Playing :
+      <span id="song-title"> Kesariya </span>
+    </h2>
+
+    <button>Change Song</button>
+
+    <script>
+      let songs = [
+        "Kesariya",
+        "Believer",
+        "Perfect",
+        "Levitating",
+        "Shape of You",
+      ];
+
+      let index = 0;
+
+      let title = document.getElementById("song-title");
+
+      let button = document.querySelector("button");
+
+      button.addEventListener("click", function () {
+        index++;
+
+        if (index >= songs.length) {
+          index = 0;
+        }
+
+        title.innerHTML = songs[index];
+      });
+    </script>
+  </body>
+</html>

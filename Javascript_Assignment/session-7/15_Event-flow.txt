@@ -1,0 +1,6 @@
+Event flow is the process that determines how an event travels through the DOM.
+
+In event bubbling, the event starts from the clicked child element and moves upward to its parent elements.
+
+Example:
+In a Flipkart shopping cart, clicking the "Remove" button may also trigger the parent cart item's click event if event bubbling is not handled properly.

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .card {
+        width: 220px;
+        padding: 15px;
+        margin: 10px;
+        border: 1px solid gray;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="showSong()">Add Song</button>
+
+    <div id="songs"></div>
+
+    <script>
+      let playlist = [
+        "Believer",
+        "Kesariya",
+        "Perfect",
+        "Levitating",
+        "Shape of You",
+      ];
+
+      function showSong() {
+        let random = Math.floor(Math.random() * playlist.length);
+
+        let card = document.createElement("div");
+
+        card.className = "card";
+
+        card.innerHTML = "<h3>" + playlist[random] + "</h3>";
+
+        document.getElementById("songs").appendChild(card);
+      }
+    </script>
+  </body>
+</html>

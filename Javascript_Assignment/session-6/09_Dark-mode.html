@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body id="body">
+
+<button id="modeBtn">
+Dark Mode
+</button>
+
+<script>
+
+let btn=document.getElementById("modeBtn");
+
+let dark=false;
+
+btn.addEventListener("click",function(){
+
+    if(!dark){
+
+        document.body.style.backgroundColor="black";
+        document.body.style.color="white";
+
+        btn.innerHTML="Light Mode";
+
+        dark=true;
+
+    }
+
+    else{
+
+        document.body.style.backgroundColor="white";
+        document.body.style.color="black";
+
+        btn.innerHTML="Dark Mode";
+
+        dark=false;
+
+    }
+
+});
+
+</script>
+</body>
+</html>

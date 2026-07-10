@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="cartBtn">Add To Cart</button>
+
+    <h3>Cart</h3>
+
+    <ul id="cart"></ul>
+
+    <script>
+      let button = document.querySelector("#cartBtn");
+
+      let cart = document.querySelector("#cart");
+
+      button.addEventListener("click", addToCart);
+
+      function addToCart() {
+        let li = document.createElement("li");
+
+        li.innerHTML = "Wireless Mouse";
+
+        cart.appendChild(li);
+      }
+    </script>
+  </body>
+</html>

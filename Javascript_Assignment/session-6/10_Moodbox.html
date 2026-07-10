@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #moodbox {
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter color" />
+
+    <div id="moodbox"></div>
+
+    <script>
+      let input = document.querySelector("input");
+
+      let box = document.getElementById("moodbox");
+
+      input.addEventListener("input", function () {
+        box.style.backgroundColor = input.value;
+      });
+    </script>
+  </body>
+</html>

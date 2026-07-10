@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .movie {
+        border: 1px solid gray;
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="movie">
+      <h3>Avengers</h3>
+
+      <button>Remove</button>
+    </div>
+
+    <div class="movie">
+      <h3>KGF</h3>
+
+      <button>Remove</button>
+    </div>
+
+    <div class="movie">
+      <h3>Pushpa</h3>
+
+      <button>Remove</button>
+    </div>
+
+    <script>
+      let buttons = document.querySelectorAll("button");
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          btn.parentElement.remove();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select onchange="showCuisine(this)">
+      <option>Indian</option>
+      <option>Chinese</option>
+      <option>Italian</option>
+      <option>Mexican</option>
+    </select>
+
+    <input type="number" placeholder="Quantity" />
+
+    <h3 id="result"></h3>
+
+    <script>
+      function showCuisine(select) {
+        document.getElementById("result").innerHTML =
+          "You selected : " + select.value;
+      }
+    </script>
+  </body>
+</html>

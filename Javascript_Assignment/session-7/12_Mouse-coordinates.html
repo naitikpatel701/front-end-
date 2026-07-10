@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        width: 400px;
+        height: 250px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+
+    <h3 id="output"></h3>
+
+    <script>
+      let box = document.getElementById("box");
+
+      let output = document.getElementById("output");
+
+      box.addEventListener("click", function (event) {
+        output.innerHTML = "X : " + event.clientX + " Y : " + event.clientY;
+      });
+    </script>
+  </body>
+</html>

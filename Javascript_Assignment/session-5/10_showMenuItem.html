@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+.menu{
+    width:220px;
+    padding:15px;
+    margin:15px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+</style>
+</head>
+<body>
+    <script>
+
+function showMenuItem(name, price){
+
+    let div=document.createElement("div");
+
+    div.className="menu";
+
+    div.innerHTML=`
+    <h3>${name}</h3>
+    <h4>₹${price}</h4>
+    `;
+
+    return div;
+
+}
+
+document.body.appendChild(showMenuItem("Pizza",299));
+document.body.appendChild(showMenuItem("Burger",149));
+document.body.appendChild(showMenuItem("Pasta",249));
+
+</script>
+</body>
+</html>
