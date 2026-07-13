@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="searchInput" type="text" placeholder="Type and press Enter" />
+
+    <h3>Recent Searches</h3>
+    <ul id="recentList"></ul>
+
+    <script>
+      function getRecentSearches() {
+        const data = localStorage.getItem("recentSearches");
+
+        if (data === null) {
+          console.log("No data in localStorage, returning []");
+          return [];
+        }
+
+        console.log("Raw data from localStorage:", data);
+        const parsed = JSON.parse(data);
+        console.log("Parsed array:", parsed);
+
+        return parsed;
+      }
+
+      function saveSearch(query) {
+        const searches = getRecentSearches();
+
+        if (!searches.includes(query)) {
+          searches.unshift(query);
+          if (searches.length > 5) {
+            searches.pop();
+          }
+          localStorage.setItem("recentSearches", JSON.stringify(searches));
+          console.log("Saved searches:", searches);
+        }
+      }
+
+      function renderRecentSearches() {
+        const list = document.getElementById("recentList");
+        list.innerHTML = "";
+        const searches = getRecentSearches();
+
+        searches.forEach(function (q) {
+          const li = document.createElement("li");
+          li.textContent = q;
+          li.onclick = function () {
+            document.getElementById("searchInput").value = q;
+          };
+          list.appendChild(li);
+        });
+      }
+
+      // On Enter key in input, save search and re-render
+      document
+        .getElementById("searchInput")
+        .addEventListener("keydown", function (e) {
+          if (e.key === "Enter") {
+            const query = e.target.value.trim();
+            if (query) {
+              saveSearch(query);
+              renderRecentSearches();
+              e.target.value = "";
+            }
+          }
+        });
+
+      // Initial render
+      renderRecentSearches();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Searches</title>
+</head>
+<body>
+
+    <h2>Recent Search Demo</h2>
+
+    <script>
+        
+        let searches = [];
+
+        
+        function saveRecentSearch(query) {
+            searches.push(query);
+
+           
+            localStorage.setItem(
+                "recentSearches",
+                JSON.stringify(searches)
+            );
+
+            console.log("Current Searches:", searches);
+            console.log("Stored Data:", localStorage.getItem("recentSearches"));
+        }
+
+        
+        saveRecentSearch("Biryani");
+        saveRecentSearch("Sneakers");
+
+        
+        document.write("<h3>Recent Searches</h3>");
+        document.write("<p>" + localStorage.getItem("recentSearches") + "</p>");
+    </script>
+
+</body>
+</html>

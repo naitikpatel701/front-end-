@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="restaurant">
+    <button onclick="addRestaurant()">Add</button>
+
+    <ul id="list"></ul>
+
+    <script>
+        let restaurants =  JSON.parse(localStorage.getItem("restaurants")) || [];
+
+       
+        display();
+
+        function addRestaurant(){
+
+            let name=document.getElementById("restaurant").value;
+
+            if(restaurants.length<3){
+                restaurants.push(name);
+
+                localStorage.setItem(
+                    "restaurants",
+                    JSON.stringify(restaurants)
+                );
+                display();
+            }
+        }
+
+        function display(){
+
+            let list =document.getElementById("list");
+
+            list.innerHTML="";
+
+           restaurants.forEach(function(item){
+            list.innerHTML += "<li>"+item+"</li>"
+           });
+        }
+    </script>
+</body>
+</html>
