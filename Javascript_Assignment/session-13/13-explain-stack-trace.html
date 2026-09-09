@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validate Spotify URL</title>
+  </head>
+  <body>
+    <h1>Validate Spotify URL</h1>
+    <script>
+      function validateSpotifyURL(url) {
+     
+        if (!url.startsWith("https://open.spotify.com/") && !url.startsWith("https://spotify.com/")) {
+          throw new Error("Invalid Spotify URL");
+        }
+        return "Valid URL";
+      }
+
+      // Pass a valid Spotify link:
+      validateSpotifyURL("https://open.spotify.com/track/4cOdK2wGLETKBW3PvgPWqT");
+    </script>
+  </body>
+</html>

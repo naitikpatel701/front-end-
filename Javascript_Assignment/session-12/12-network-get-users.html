@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h2>Open Developer Tools → Network</h2>
+
+<script>
+fetch("https://jsonplaceholder.typicode.com/users")
+    .then(response => response.json())
+    .then(users => {
+        console.log("Users:", users);
+    })
+    .catch(error => console.error("Error:", error));
+</script>
+ 
+</body>
+</html>

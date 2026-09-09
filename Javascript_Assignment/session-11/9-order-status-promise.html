@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Promise Example</h1>
+       <script>
+
+        function getOrderStatus(orderId) {
+
+            return new Promise(function(resolve, reject) {
+
+                setTimeout(function() {
+
+                    if (orderId % 2 === 0) {
+
+                        resolve("Order delivered");
+
+                    } else {
+
+                        reject("Order not found");
+
+                    }
+
+                }, 1500);
+
+            });
+        }
+
+
+       
+        getOrderStatus(102)
+            .then(function(message) {
+
+                console.log(message);
+
+            })
+            .catch(function(error) {
+
+                console.log(error);
+
+            });
+
+
+      
+        getOrderStatus(101)
+            .then(function(message) {
+
+                console.log(message);
+
+            })
+            .catch(function(error) {
+
+                console.log(error);
+
+            });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Payment With Promise</h1>
+    <script>
+      function makePayment() {
+        return new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            resolve("Payment successful!");
+          }, 1000);
+        });
+      }
+
+      makePayment().then(function (message) {
+        console.log(message);
+      });
+    </script>
+  </body>
+</html>
